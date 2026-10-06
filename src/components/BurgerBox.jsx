@@ -10,10 +10,11 @@ function BurgerBox() {
     <div className="container">
       <h2 className="text">Number of burger buns available - {burgerBuns}</h2>
       <input
-        type="text"
+        type="number"
         placeholder="Enter number of burgers you want"
         onChange={(e) => setNum(e.target.value)}
         value={num}
+        min={1}
       />
       <button className="btn" onClick={() => dispatch(orderBurger(num))}>
         Order Burger

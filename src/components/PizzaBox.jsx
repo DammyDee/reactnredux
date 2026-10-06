@@ -9,8 +9,16 @@ function PizzaBox() {
   return (
     <div className="container">
       <h2 className="text">Number of pizza base available - {pizzaBase}</h2>
-      <input type="text" placeholder="Enter number of burgers you want" value={num} onChange={e=>setNum(e.target.value)}/>
-      <button className="btn" onClick={()=>dispatch(orderPizza(num))}>Order Pizza</button>
+      <input
+        type="number"
+        placeholder="Enter number of burgers you want"
+        value={num}
+        onChange={(e) => setNum(e.target.value)}
+        min={1}
+      />
+      <button className="btn" onClick={() => dispatch(orderPizza(num))}>
+        Order Pizza
+      </button>
     </div>
   );
 }
